@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
 import "dotenv/config";
 import { connectDB } from "./config/server";
@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(verifyToken); //middleware
-app.get("/", (req: Request, res: Response) => {
+app.get("/", (req, res) => {
     res.send("Hello, TypeScript Express!");
 });
 io.on("connection", () => {
