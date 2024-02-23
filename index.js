@@ -20,11 +20,11 @@ const app = (0, express_1.default)();
 const server = (0, node_http_1.createServer)(app);
 const io = new socket_io_1.Server(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: ["http://localhost:5173", "https://muhammedfayistgl.github.io", 'https://instagram-server-jyei.onrender.com/'],
         credentials: true,
     },
 });
-app.use((0, cors_1.default)({ credentials: true, origin: ["http://localhost:5173", "https://muhammedfayistgl.github.io"] }));
+app.use((0, cors_1.default)({ credentials: true, origin: ["http://localhost:5173", "https://muhammedfayistgl.github.io", 'https://instagram-server-jyei.onrender.com/'] }));
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
