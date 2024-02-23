@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon index.js",
     "build": "tsc",
     "server": "node dist/index.js",
     "deploy": "gh-pages -d dist"
