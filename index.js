@@ -26,7 +26,6 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(verifyToken); //middleware
 
-
 app.get("/", (req, res) => {
     res.send("Hello, TypeScript Express!");
 });
