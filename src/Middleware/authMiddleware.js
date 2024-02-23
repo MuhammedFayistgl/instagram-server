@@ -1,7 +1,7 @@
-import { NextFunction, Request, Response } from "express";
 
 
-export const verifyToken = (req: Request, res: Response, next: NextFunction) => {
+
+export const verifyToken = (req, res, next) => {
     const tokenHeader = req.headers["authorization"];
     const token = tokenHeader && tokenHeader.split(" ")[1];
 

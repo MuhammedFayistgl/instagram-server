@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
-import { connectDB } from "./config/server";
-import Route from "./router/userRoute";
-import ChatRoute from "./router/chatRoute";
+import { connectDB } from "./config/server.js";
+import Route from "./router/userRoute.js";
+import ChatRoute from "./router/chatRoute.js";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import { createServer } from "node:http";

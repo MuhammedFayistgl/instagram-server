@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Request, Response, Router } from "express";
-import userSchema from "../schema/userSchema";
+
+import userSchema from "../schema/userSchema.js";
 import mongoose from "mongoose";
 import moment from "moment";
-import { getUID } from "../utils/userUtility";
+import { getUID } from "../utils/userUtility.js";
+import { Router } from "express";
 const Route = Router();
 
 Route.get("/", (req, res) => {
@@ -758,7 +759,7 @@ Route.get("/instagram-random-story-only-status-view", async (req, res) => {
         console.log(error);
     }
 });
-Route.post("/instagram-random-story-only-status-with-id", async (req: Request, res: Response) => {
+Route.post("/instagram-random-story-only-status-with-id", async (req, res ) => {
     const { id } = req.body;
     const array = await userSchema.aggregate([
         {
@@ -845,7 +846,7 @@ Route.post("/create-User-with-userName", async (req) => {
 Route.post(
     "/instagram-user-like",
 
-    async (req: Request) => {
+    async (req) => {
         const { uid, targetID } = req.body;
         const TargetLikeObj = await userSchema.aggregate([
             {
@@ -876,7 +877,7 @@ Route.post(
 Route.post(
     "/instagram-user-Unlike",
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async (req: Request, res: Response) => {
+    async (req) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { Like, targetID } = req.body;
         // const countLike = await userSchema.findOneAndUpdate(
@@ -909,7 +910,7 @@ Route.get("/get-my-username", async (req, res) => {
     res.send(userName);
 });
 
-Route.post("/get-users-chat", async (req: Request, res: Response) => {
+Route.post("/get-users-chat", async (req, res) => {
     const uid = getUID(req, res);
     if (!uid) return res.sendStatus(401).json("uid not found");
 

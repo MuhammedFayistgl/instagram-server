@@ -1,12 +1,12 @@
-import { Request, Response } from "express";
 
-export const getcookie = (req: Request) => {
+
+export const getcookie = (req) => {
     const cookie = req.headers.cookie;
     // user=someone; session=mySessionID
     return cookie?.split("; ");
 };
 
-export const getUID = (req: Request, res: Response) => {
+export const getUID = (req, res) => {
     const tokenHeader = req.headers["authorization"];
     const token = tokenHeader && tokenHeader.split(" ")[1];
 
