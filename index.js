@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use(cors({ credentials: true, origin: ["http://localhost:5173", "https://muhammedfayistgl.github.io","https://muhammedfayistgl.github.io/instagram_clone/"] }));
+app.use(cors({ credentials: true, origin: [ "https://muhammedfayistgl.github.io","http://localhost:5173"] }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
